@@ -1,0 +1,220 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.master.cs" Inherits="DatabaseCW.Dashboard1" %>
+
+<%--<!DOCTYPE html>
+
+<html>
+<head runat="server">
+ 
+   <title>Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Custom styles for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #adb5bd;
+            color: #343a40;
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        /* Custom styles for the content */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        /* Custom styles for the navbar */
+        .navbar-custom {
+            background-color: #343a40;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #ffffff;
+            font-size: 24px;
+        }
+
+        .navbar-custom .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="Dashboard.aspx"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="Student.aspx"><i class="fas fa-user-graduate"></i> Student</a>
+            <a href="Course.aspx"><i class="fas fa-book"></i> Course</a>
+            <a href="Lesson.aspx"><i class="fas fa-chalkboard-teacher"></i> Lesson</a>
+            <a href="Instructor.aspx"><i class="fas fa-users"></i> Instructor</a>
+            <a href="StudentProgress.aspx"><i class="fas fa-chart-line"></i> Student Progress</a>
+            <a href="StudentEnrollment.aspx"><i class="fas fa-user-plus"></i> Student Enrollment</a>
+            <a href="CourseInstructor.aspx"><i class="fas fa-chalkboard"></i> Course Instructor</a>
+            <a href="BestCourse.aspx"><i class="fas fa-medal"></i> Best Course</a>
+        </div>
+
+        <!-- Page content -->
+        <div class="content p-3">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <!-- Content from individual pages will be inserted here -->
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Bootstrap and JavaScript references -->
+        <script src="Scripts/jquery-3.5.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>--%>
+<%--<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.master.cs" Inherits="DatabaseCW.Dashboard1" %>--%>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Custom styles for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #212529;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #adb5bd;
+            color: #343a40;
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        /* Custom styles for the content */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            padding-top: 70px; /* Added to make space for the top container */
+        }
+
+        /* Custom styles for the top container */
+        .top-container {
+            position: fixed;
+            top: 0;
+            left: 250px; /* Adjusted to match the sidebar width */
+            width: calc(100% - 250px); /* Adjusted to match the sidebar width */
+            /*background-color: #343a40;*/
+            background-color: #343a40;
+
+
+            padding: 10px;
+            z-index: 1000; /* Added to ensure the top container appears above other content */
+        }
+
+        /* Custom styles for the navbar */
+        .navbar-custom {
+            background-color: #343a40;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #ffffff;
+            font-size: 24px;
+        }
+
+        .navbar-custom .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Top container -->
+        <div class="top-container">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><span class="fas fa-book"  style="margin-right: 10px;"></span>E-LearnVerse</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="Dashboard.aspx"><i class="fas fa-user-graduate"></i> Dashboard</a>
+            <a href="Student.aspx"><i class="fas fa-user-graduate"></i> Student</a>
+            <a href="Course.aspx"><i class="fas fa-book"></i> Course</a>
+            <a href="Lesson.aspx"><i class="fas fa-chalkboard-teacher"></i> Lesson</a>
+            <a href="Instructor.aspx"><i class="fas fa-users"></i> Instructor</a>
+            <a href="StudentEnrollment.aspx"><i class="fas fa-user-plus"></i> Student Enrollment</a>
+            <a href="StudentProgress.aspx"><i class="fas fa-chart-line"></i> Student Progress</a>
+            <a href="CourseInstructor.aspx"><i class="fas fa-chalkboard"></i> Course Instructor</a>
+            <a href="BestCourse.aspx"><i class="fas fa-medal"></i> Best Course</a>
+        </div>
+
+        <!-- Page content -->
+        <div class="content mt-5">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <!-- Content from individual pages will be inserted here -->
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Bootstrap and JavaScript references -->
+        <script src="Scripts/jquery-3.5.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>
+
+
+
